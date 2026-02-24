@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "linear": {
+    "mode": "mcp",
+    "team": "TEAM_KEY_OR_ID",
+    "project": "OPTIONAL_PROJECT_KEY_OR_ID"
+  },
+  "git": {
+    "base_branch": "main"
+  },
+  "ship": {
+    "single_commit_required": true
+  }
+}

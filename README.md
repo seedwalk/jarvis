@@ -8,14 +8,61 @@ La idea es operar con flujo tipo GSD, pero mapeado a objetos reales de Linear:
 - Task plan -> subtickets de cada phase
 - Research -> tickets opcionales (milestone y/o phase)
 
+## Que es `jarvis-cc`
+
+`jarvis-cc` es el nombre del paquete npm/CLI instalador de Jarvis para OpenCode.
+Es el comando que la gente usa para instalar los comandos `/jarvis-*` en su entorno.
+
+## Instalacion
+
+```bash
+# En el repo actual
+npx jarvis-cc@latest --opencode --local
+
+# Global en tu maquina
+npx jarvis-cc@latest --opencode --global
+```
+
+Desinstalar:
+
+```bash
+npx jarvis-cc@latest --opencode --local --uninstall
+npx jarvis-cc@latest --opencode --global --uninstall
+```
+
+## Publicar en npm
+
+```bash
+npm login
+npm publish --access public
+```
+
+Actualizar version:
+
+```bash
+npm version patch
+git push --follow-tags
+```
+
 ## Estado actual
 
-Este repo esta en fase de definicion funcional.
-La base vive en `/.specs`:
+Ya incluye un MVP de comandos para OpenCode en `.opencode/commands/jarvis/`.
+La base funcional y de producto vive en:
 
 - `/.specs/vision.md`
 - `/.specs/product-spec.md`
 - `/.specs/propuesta.md`
+
+## Como usar en este repo
+
+1. Abri OpenCode en este repo.
+2. Ejecuta `/jarvis-setup`.
+3. Segui el flujo milestone -> research -> plan -> execute -> verify -> ship.
+
+Nota de naming:
+
+- En OpenCode los comandos quedaron como `/jarvis-...`.
+- Equivalen a tu naming conceptual `/jarvis:...`.
 
 ## Objetivo del MVP
 
@@ -27,26 +74,27 @@ Implementar comandos slash para OpenCode que permitan:
 - ejecutar y verificar phases
 - cerrar con flujo de ship (1 commit + PR)
 
-## Comandos objetivo
+## Comandos disponibles
 
-- `/jarvis:setup`
-- `/jarvis:new-milestone`
-- `/jarvis:research-milestone`
-- `/jarvis:plan-milestone`
-- `/jarvis:research-phase <phase-id>`
-- `/jarvis:execute-phase <phase-id>`
-- `/jarvis:verify-phase <phase-id>`
-- `/jarvis:close-phase <phase-id>`
-- `/jarvis:ship`
+- `/jarvis-help`
+- `/jarvis-setup`
+- `/jarvis-new-milestone`
+- `/jarvis-research-milestone`
+- `/jarvis-plan-milestone`
+- `/jarvis-research-phase <phase-id>`
+- `/jarvis-execute-phase <phase-id>`
+- `/jarvis-verify-phase <phase-id>`
+- `/jarvis-close-phase <phase-id>`
+- `/jarvis-ship`
 
 ## Flujo recomendado
 
-1. `/jarvis:setup` para conectar MCP de Linear
-2. `/jarvis:new-milestone` para crear objetivo padre
-3. `/jarvis:research-milestone` para abrir y documentar research
-4. `/jarvis:plan-milestone` para crear phases + tasks
+1. `/jarvis-setup` para conectar MCP de Linear
+2. `/jarvis-new-milestone` para crear objetivo padre
+3. `/jarvis-research-milestone` para abrir y documentar research
+4. `/jarvis-plan-milestone` para crear phases + tasks
 5. ejecutar/verificar por phase
-6. `/jarvis:ship` para commit unico, push y PR
+6. `/jarvis-ship` para commit unico, push y PR
 
 ## Configuracion esperada
 
@@ -63,13 +111,19 @@ Implementar comandos slash para OpenCode que permitan:
 - `sessions/`: historial de contexto por conversacion
 - `templates/session.md`: template de sesion
 
-## Siguientes pasos para arrancar
+## Estructura tecnica agregada
 
-1. Definir contrato tecnico de cada comando (`input/output`, errores, side effects).
-2. Implementar `/jarvis:setup` y conexion MCP Linear.
-3. Implementar `new-milestone -> research-milestone -> plan-milestone`.
-4. Implementar ejecucion/verificacion por phase.
-5. Implementar `ship` con PR template y salida markdown para copiar/pegar.
+- `.opencode/commands/jarvis/*.md`: comandos slash de Jarvis
+- `bin/install.js`: instalador CLI para npm (`jarvis-cc`)
+- `package.json`: metadata/publicacion del paquete
+- `.jarvis/config.example.json`: ejemplo de configuracion local
+- `.github/pull_request_template.md`: template base para `jarvis-ship`
+
+## Proximos pasos
+
+1. Conectar acciones reales de Linear por MCP en cada comando.
+2. Agregar fallback API de Linear con `LINEAR_API_KEY`.
+3. Versionar instalador (`npx jarvis-cc`) para usarlo en cualquier repo.
 
 ## Nota
 

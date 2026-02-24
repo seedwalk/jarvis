@@ -1,0 +1,23 @@
+{
+  "name": "jarvis-cc",
+  "version": "0.1.0",
+  "description": "Jarvis command pack installer for OpenCode",
+  "license": "MIT",
+  "bin": {
+    "jarvis-cc": "bin/install.js"
+  },
+  "files": [
+    "bin/install.js",
+    ".opencode/commands/jarvis",
+    "README.md"
+  ],
+  "keywords": [
+    "opencode",
+    "jarvis",
+    "linear",
+    "agent"
+  ],
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -37,5 +37,12 @@ __pycache__/
 .venv/
 venv/
 
-# OpenCode / local runtime state
-.opencode/
+# Jarvis local runtime secrets/config
+.jarvis/config.json
+
+# OpenCode: keep only Jarvis command pack versioned
+.opencode/*
+!.opencode/commands/
+.opencode/commands/*
+!.opencode/commands/jarvis/
+!.opencode/commands/jarvis/*.md
