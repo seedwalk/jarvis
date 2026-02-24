@@ -1,0 +1,175 @@
+{
+  "entrypoints": [
+    "main"
+  ],
+  "origins": {
+    "237": [
+      237
+    ],
+    "17896441": [
+      869,
+      401
+    ],
+    "main": [
+      354,
+      869,
+      792
+    ],
+    "runtime~main": [
+      792,
+      869,
+      354
+    ],
+    "0e384e19": [
+      976
+    ],
+    "5e95c892": [
+      647
+    ],
+    "7724ba2c": [
+      681
+    ],
+    "a7456010": [
+      235
+    ],
+    "a7bd4aaa": [
+      98
+    ],
+    "a94703ab": [
+      869,
+      48
+    ],
+    "aba21aa0": [
+      742
+    ],
+    "c4f5d8e4": [
+      634
+    ],
+    "styles": [
+      48,
+      354,
+      401,
+      792,
+      869
+    ]
+  },
+  "assets": {
+    "48": {
+      "js": [
+        {
+          "file": "assets/js/a94703ab.43621b10.js",
+          "hash": "ccc04e6c55964e4d",
+          "publicPath": "/jarvis/assets/js/a94703ab.43621b10.js"
+        }
+      ]
+    },
+    "98": {
+      "js": [
+        {
+          "file": "assets/js/a7bd4aaa.6ed1ef43.js",
+          "hash": "023f0906714d0520",
+          "publicPath": "/jarvis/assets/js/a7bd4aaa.6ed1ef43.js"
+        }
+      ]
+    },
+    "235": {
+      "js": [
+        {
+          "file": "assets/js/a7456010.99fad146.js",
+          "hash": "bfd08acc14a265d7",
+          "publicPath": "/jarvis/assets/js/a7456010.99fad146.js"
+        }
+      ]
+    },
+    "237": {
+      "js": [
+        {
+          "file": "assets/js/237.a055e6f3.js",
+          "hash": "1ceb1362114ea4fa",
+          "publicPath": "/jarvis/assets/js/237.a055e6f3.js"
+        }
+      ]
+    },
+    "354": {
+      "js": [
+        {
+          "file": "assets/js/runtime~main.b437890a.js",
+          "hash": "f7facaab475f6e57",
+          "publicPath": "/jarvis/assets/js/runtime~main.b437890a.js"
+        }
+      ]
+    },
+    "401": {
+      "js": [
+        {
+          "file": "assets/js/17896441.e51f9c70.js",
+          "hash": "af9efd7f39ec8506",
+          "publicPath": "/jarvis/assets/js/17896441.e51f9c70.js"
+        }
+      ]
+    },
+    "634": {
+      "js": [
+        {
+          "file": "assets/js/c4f5d8e4.b6ee9e7d.js",
+          "hash": "b77355cdfbb177ef",
+          "publicPath": "/jarvis/assets/js/c4f5d8e4.b6ee9e7d.js"
+        }
+      ]
+    },
+    "647": {
+      "js": [
+        {
+          "file": "assets/js/5e95c892.6c3a5c75.js",
+          "hash": "03b9b30a85a626bf",
+          "publicPath": "/jarvis/assets/js/5e95c892.6c3a5c75.js"
+        }
+      ]
+    },
+    "681": {
+      "js": [
+        {
+          "file": "assets/js/7724ba2c.45fe844c.js",
+          "hash": "c40ba25f615b0912",
+          "publicPath": "/jarvis/assets/js/7724ba2c.45fe844c.js"
+        }
+      ]
+    },
+    "742": {
+      "js": [
+        {
+          "file": "assets/js/aba21aa0.6ac09c73.js",
+          "hash": "b9d80472d580c5f5",
+          "publicPath": "/jarvis/assets/js/aba21aa0.6ac09c73.js"
+        }
+      ]
+    },
+    "792": {
+      "js": [
+        {
+          "file": "assets/js/main.e3d538ad.js",
+          "hash": "4095683811efdf96",
+          "publicPath": "/jarvis/assets/js/main.e3d538ad.js"
+        }
+      ]
+    },
+    "869": {
+      "css": [
+        {
+          "file": "assets/css/styles.8f13ce73.css",
+          "hash": "d6435e853d5f1d01",
+          "publicPath": "/jarvis/assets/css/styles.8f13ce73.css"
+        }
+      ]
+    },
+    "976": {
+      "js": [
+        {
+          "file": "assets/js/0e384e19.794aef05.js",
+          "hash": "62bd14259f21ebdc",
+          "publicPath": "/jarvis/assets/js/0e384e19.794aef05.js"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,32 @@
+:root {
+  --ifm-color-primary: #0e7490;
+  --ifm-color-primary-dark: #0c657d;
+  --ifm-color-primary-darker: #0b5d74;
+  --ifm-color-primary-darkest: #094c5f;
+  --ifm-color-primary-light: #1083a3;
+  --ifm-color-primary-lighter: #118bab;
+  --ifm-color-primary-lightest: #159dc1;
+}
+
+.hero-wrapper {
+  min-height: calc(100vh - var(--ifm-navbar-height));
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  background: radial-gradient(circle at top right, #cffafe 0%, #f0fdfa 35%, #ecfeff 100%);
+}
+
+.hero-content {
+  max-width: 680px;
+  text-align: center;
+}
+
+.hero-content h1 {
+  margin-bottom: 0.5rem;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+}
+
+.hero-content p {
+  margin-bottom: 1.5rem;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+}

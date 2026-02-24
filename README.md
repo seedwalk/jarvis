@@ -128,3 +128,22 @@ Implementar comandos slash para OpenCode que permitan:
 ## Nota
 
 Al finalizar cada comando, Jarvis debe sugerir los siguientes comandos posibles.
+
+## Documentacion con Docusaurus + GitHub Pages
+
+- Sitio: `docs-site/`
+- Workflow de deploy: `.github/workflows/deploy-docs.yml`
+
+Comandos locales:
+
+```bash
+cd docs-site
+npm install
+npm run start
+```
+
+Para publicar en GitHub Pages:
+
+1. En GitHub, habilitar Pages con `Source: GitHub Actions`.
+2. Hacer push a `main` con cambios en `docs-site/**`.
+3. El workflow `Deploy Docs` construye y publica automaticamente.
