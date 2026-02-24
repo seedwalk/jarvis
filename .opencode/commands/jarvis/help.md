@@ -1,6 +1,6 @@
 ---
 name: jarvis-help
-description: Show Jarvis commands for Linear-first workflow
+description: Show Jarvis command reference
 ---
 
 <reference>
@@ -9,33 +9,33 @@ description: Show Jarvis commands for Linear-first workflow
 ## Setup
 
 - `/jarvis-setup`
-  - Configura Jarvis para este repo
-  - Valida modo de integracion con Linear (MCP o API fallback)
+  - Configure Jarvis for this repo
+  - Validate Linear integration mode (MCP or API fallback)
 
 ## Milestones
 
-- `/jarvis-new-milestone [objetivo]`
-  - Crea milestone local y prepara ticket padre en Linear
+- `/jarvis-new-milestone [objective]`
+  - Create local milestone and prepare parent ticket in Linear
 - `/jarvis-research-milestone [milestone-id]`
-  - Crea/actualiza Spike Research del milestone
+  - Create/update milestone Spike Research
 - `/jarvis-plan-milestone [milestone-id]`
-  - Genera phases y tasks
+  - Generate phases and tasks
 
-## Fases
+## Phases
 
 - `/jarvis-research-phase <phase-id>`
-  - Research opcional por fase
+  - Optional phase research
 - `/jarvis-execute-phase <phase-id>`
-  - Ejecuta tasks de fase y resume resultados
+  - Execute phase tasks and summarize outcomes
 - `/jarvis-verify-phase <phase-id>`
-  - UAT/QA checklist y decision pass/fail
+  - UAT/QA checklist and pass/fail decision
 
 ## Shipping
 
 - `/jarvis-ship`
-  - 1 commit final, push, PR template
+  - Final single commit, push, PR template
 
-## Regla de uso
+## Usage rule
 
-Al terminar cada comando, Jarvis debe mostrar bloque "Comandos sugeridos".
+At the end of each command, Jarvis must show a "Comandos sugeridos" block.
 </reference>

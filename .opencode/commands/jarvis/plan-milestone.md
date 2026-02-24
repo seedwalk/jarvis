@@ -1,6 +1,6 @@
 ---
 name: jarvis-plan-milestone
-description: Build phases and task plans for a milestone
+description: Generate phases and tasks for a milestone
 argument-hint: "<milestone-id>"
 tools:
   - read
@@ -10,27 +10,20 @@ tools:
 ---
 
 <objective>
-Create phase-level tickets and task subtickets from milestone context and research.
+Generate phase and task plan for a milestone.
 </objective>
 
 <process>
-1. Load milestone file and research (if present).
-2. Propose 2-6 phases as outcomes, each with:
-   - goal
-   - Definition of Done
-   - risks
-   - dependencies
-3. For each phase, create 2-8 task plans (subtasks).
-4. Persist planning in milestone file.
-5. Sync to Linear when available:
-   - create phase child tickets under milestone parent
-   - create task sub-issues under each phase
-6. Print a concise planning table.
-7. Ask for approval only if plan materially changes scope.
+1. Validate milestone exists under `.jarvis/milestones/`.
+2. Read milestone objective and optional research.
+3. Generate `PLAN.md` with phases, tasks, dependencies, and acceptance criteria.
+4. If Linear integration is available, create/update child issues under the parent milestone issue.
+5. Save created issue references back to local milestone files.
+6. Return phase list and next execution step.
 </process>
 
 <offer_next>
 Comandos sugeridos:
 - `/jarvis-execute-phase <phase-id>`
-- `/jarvis-verify-phase <phase-id>`
+- `/jarvis-help`
 </offer_next>

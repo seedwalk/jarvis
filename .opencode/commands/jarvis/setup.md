@@ -1,6 +1,6 @@
 ---
 name: jarvis-setup
-description: Initialize Jarvis config and Linear integration for this repository
+description: Configure Jarvis for this repository
 tools:
   - read
   - write
@@ -38,6 +38,6 @@ Configure Jarvis for this repository and leave it ready to run milestone command
 
 <offer_next>
 Comandos sugeridos:
-- `/jarvis-new-milestone "objetivo"`
+- `/jarvis-new-milestone "objective"`
 - `/jarvis-help`
 </offer_next>

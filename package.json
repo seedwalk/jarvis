@@ -9,6 +9,7 @@
   "files": [
     "bin/install.js",
     ".opencode/commands/jarvis",
+    ".opencode/get-shit-done",
     "README.md"
   ],
   "keywords": [

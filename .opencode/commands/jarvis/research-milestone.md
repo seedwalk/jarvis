@@ -1,38 +1,28 @@
 ---
 name: jarvis-research-milestone
-description: Run milestone research and create/update optional Spike/Research issue
+description: Create or update milestone Spike Research
 argument-hint: "<milestone-id>"
 tools:
   - read
   - write
   - bash
   - question
-  - webfetch
 ---
 
 <objective>
-Run research for a milestone and store findings locally and in Linear comments.
+Create or update Spike Research for a milestone.
 </objective>
 
 <process>
-1. Resolve milestone by id/slug.
-2. If milestone research issue is missing:
-   - create `[RESEARCH] Spike - <milestone>` issue (MCP/API if available)
-   - otherwise prepare issue draft for manual creation
-3. Produce research note:
-   - context
-   - findings
-   - options
-   - recommendation
-   - risks
-4. Save research artifact:
-   - `.jarvis/milestones/<id>/research.md` OR section in milestone file
-5. Add/update a research comment on Linear issue.
-6. Update milestone file with research status and links.
+1. Validate milestone exists under `.jarvis/milestones/`.
+2. Create or update `RESEARCH.md` in that milestone folder.
+3. If Linear integration is available, create/update a linked Spike issue.
+4. Save references (issue ID/URL) in the milestone files.
+5. Return a concise summary.
 </process>
 
 <offer_next>
 Comandos sugeridos:
 - `/jarvis-plan-milestone <milestone-id>`
-- `/jarvis-research-phase <phase-id>`
+- `/jarvis-help`
 </offer_next>

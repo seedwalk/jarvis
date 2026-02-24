@@ -24,23 +24,34 @@ const installScope = isGlobal ? "global" : "local"
 
 const repoRoot = path.resolve(__dirname, "..")
 const sourceDir = path.join(repoRoot, ".opencode", "commands", "jarvis")
+const sourceAssetsDir = path.join(repoRoot, ".opencode", "get-shit-done")
 
 if (!fs.existsSync(sourceDir)) {
   fail(`Source commands not found: ${sourceDir}`)
 }
 
+if (!fs.existsSync(sourceAssetsDir)) {
+  fail(`Source assets not found: ${sourceAssetsDir}`)
+}
+
+const targetOpenCodeDir = installScope === "global"
+  ? path.join(os.homedir(), ".config", "opencode")
+  : path.join(process.cwd(), ".opencode")
+
 const targetDir = installScope === "global"
-  ? path.join(os.homedir(), ".config", "opencode", "commands", "jarvis")
-  : path.join(process.cwd(), ".opencode", "commands", "jarvis")
+  ? path.join(targetOpenCodeDir, "commands", "jarvis")
+  : path.join(targetOpenCodeDir, "commands", "jarvis")
+
+const targetAssetsDir = path.join(targetOpenCodeDir, "get-shit-done")
 
 if (isUninstall) {
   uninstall(targetDir)
   process.exit(0)
 }
 
-install(sourceDir, targetDir)
+install(sourceDir, targetDir, sourceAssetsDir, targetAssetsDir)
 
-function install(fromDir, toDir) {
+function install(fromDir, toDir, assetsFromDir, assetsToDir) {
   const files = fs
     .readdirSync(fromDir)
     .filter((file) => file.endsWith(".md"))
@@ -55,9 +66,12 @@ function install(fromDir, toDir) {
     fs.copyFileSync(path.join(fromDir, file), path.join(toDir, file))
   }
 
+  copyDirectory(assetsFromDir, assetsToDir)
+
   console.log("Jarvis installed successfully.")
   console.log(`Mode: ${installScope}`)
   console.log(`Target: ${toDir}`)
+  console.log(`Assets: ${assetsToDir}`)
   console.log("\nTry these commands in OpenCode:")
   console.log("- /jarvis-help")
   console.log("- /jarvis-setup")
@@ -88,6 +102,23 @@ function printHelp() {
   console.log("  --global, -g Install into ~/.config/opencode")
   console.log("  --uninstall  Remove installed commands")
   console.log("  --help, -h   Show this help")
+}
+
+function copyDirectory(fromDir, toDir) {
+  fs.mkdirSync(toDir, { recursive: true })
+  const entries = fs.readdirSync(fromDir, { withFileTypes: true })
+
+  for (const entry of entries) {
+    const fromPath = path.join(fromDir, entry.name)
+    const toPath = path.join(toDir, entry.name)
+
+    if (entry.isDirectory()) {
+      copyDirectory(fromPath, toPath)
+      continue
+    }
+
+    fs.copyFileSync(fromPath, toPath)
+  }
 }
 
 function fail(message) {
